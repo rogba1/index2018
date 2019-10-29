@@ -4,7 +4,7 @@ podTemplate(
     containers: [
         containerTemplate(
             name: 'golang', 
-            image: 'golang:1.10-alpine',
+            image: 'rogba1/jnlp-slave3',
             ttyEnabled: true,
             command: 'cat'
         ),
@@ -16,7 +16,7 @@ podTemplate(
         ),
         containerTemplate(
             name: 'helm', 
-            image: 'ibmcom/k8s-helm:v2.6.0',
+            image: 'rogba1/jnlp-slave3',
             ttyEnabled: true,
             command: 'cat'
         )
