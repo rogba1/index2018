@@ -44,7 +44,7 @@ podTemplate(
             container ('docker') {
                 def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
                 /*repository = "${registryIp}:80/hello"*/
-                repository = "936666312333.dkr.ecr.eu-west-1.amazonaws.com/testmock"
+                repository = "936666312333.dkr.ecr.eu-west-1.amazonaws.com/jenkins"
                 sh "\$(aws ecr get-login --no-include-email --region eu-west-1)"
                 sh "docker build -t ${repository}:${commitId} ."
                 sh "docker push ${repository}:${commitId}"
