@@ -10,7 +10,7 @@ podTemplate(
         ),
         containerTemplate(
             name: 'docker', 
-            image: 'rogba1/jnlp-slave16',
+            image: 'rogba1/jnlp-slave17',
             ttyEnabled: true,
             command: 'cat'
         ),
