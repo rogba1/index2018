@@ -53,7 +53,7 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} poc-serverless-deploy:latest poc-serverless-deploy:latest"
+                sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} poc-serverless-deploy"
                 /*sh "/helm upgrade --install --wait stable/mariadb"*/
             }
         }
