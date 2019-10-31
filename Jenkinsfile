@@ -28,7 +28,7 @@ podTemplate(
         )
     ]
 ) {
-    node('mypod') {
+    node('shlpod') {
         def commitId
         stage ('Extract') {
             checkout scm
