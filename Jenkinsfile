@@ -54,7 +54,7 @@ podTemplate(
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
                 /*sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} "*/
-                sh "/helm install stable/mariadb"
+                sh "/helm upgrade --install --wait stable/mariadb"
             }
         }
     }
