@@ -44,7 +44,7 @@ podTemplate(
             container ('docker') {
                 def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
                 /*repository = "${registryIp}:80/hello"*/
-                repository = "936666312333.dkr.ecr.eu-west-1.amazonaws.com/jenkins"
+                repository = "936666312333.dkr.ecr.eu-west-1.amazonaws.com/poc-serverless-deploy"
                 sh "\$(aws ecr get-login --no-include-email --region eu-west-1)"
                 sh "docker build -t ${repository}:${commitId} ."
                 sh "docker push ${repository}:${commitId}"
@@ -53,7 +53,7 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} hello hello"
+                sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} "
             }
         }
     }
