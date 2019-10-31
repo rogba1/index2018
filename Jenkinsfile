@@ -1,5 +1,5 @@
 podTemplate(
-    label: 'mypod', 
+    label: 'shlpod', 
     inheritFrom: 'default',
     containers: [
         containerTemplate(
